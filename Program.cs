@@ -3,9 +3,9 @@ using UserManagementApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Veritabanı bağlantısını ekleyin
+// Veritabanı bağlantısını appsettings.json üzerinden alın
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("EMRE_SEFEROGLU\\SQLEXPRESS;Database=UserManagement;Trusted_Connection=True;MultipleActiveResultSets=true"))
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Server=EMRE_SEFEROGLU\\SQLEXPRESS;Database=UserManagement;Trusted_Connection=True;MultipleActiveResultSets=true"))
 );
 
 builder.Services.AddControllersWithViews();
